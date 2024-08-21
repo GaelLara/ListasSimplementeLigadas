@@ -9,7 +9,7 @@ namespace ListasSimplementeLigadas
         {
             _nodoIncial = new Nodo();
         }
-
+        // CUANDO EL ENLACE SEA NULL , LA LISTA ESTARA VACIA
         private bool EstaVacia()
         {
             if (_nodoIncial.Enlace == null)
@@ -21,12 +21,12 @@ namespace ListasSimplementeLigadas
                 return false;
             }
         }
-
+        // ELIMINAR DATOS DE LA LISTA
         public void Vaciar()
         {
             _nodoIncial.Enlace = null;
         }
-
+        // AGREGAR DATOS A LA LISTA
         public void Agregar(string valor)
         {
             Nodo nodoActual = _nodoIncial;
@@ -38,7 +38,7 @@ namespace ListasSimplementeLigadas
             Nodo nodoNuevo = new Nodo(valor);
             nodoActual.Enlace = nodoNuevo;
         }
-
+        // ESTE METODO SIRVE PARA QUE LA CONSOLA TE DE UN DATO EN ESPECIFICO
         public string ObtenerDatos()
         {
             StringBuilder datos = new StringBuilder();
@@ -50,7 +50,7 @@ namespace ListasSimplementeLigadas
             }
             return datos.ToString();
         }
-
+        // SIRVE PARA BUSCAR ELEMENTOS DENTRO DE LA LISTA
         public Nodo Buscar(string valor)
         {
             Nodo nodoActual = _nodoIncial;
@@ -64,7 +64,7 @@ namespace ListasSimplementeLigadas
             }
             return null;
         }
-
+        // ESTE METODO SIRVE PARA BUSCAR EL DATO ANTERIOR, TE AYUDA CUANDO QUIERES ELIMINAR UN DATO         
         public Nodo BuscarAnterior(string valor)
         {
             Nodo nodoActual = _nodoIncial;
@@ -78,7 +78,7 @@ namespace ListasSimplementeLigadas
             }
             return null;
         }
-
+        //SIRVE PARA ELIMINAR DATOS
         public void Eliminar(string valor) 
         {
         Nodo nodoActual = Buscar(valor);
